@@ -7,9 +7,8 @@ function Win2(){
 		
 	});
 	win.add(table);
-	// *Eventos
 	
-	// Fin Eventos*
+	// *Eventos
 	win.addEventListener('focus', function(e){
 		var databaseObj = new dataBase('query', null),
 		    data = []; 
@@ -21,6 +20,8 @@ function Win2(){
 		};
 	    table.data = data;
 	});
+	// Fin Eventos*
+	
 	return win;
 }
 
