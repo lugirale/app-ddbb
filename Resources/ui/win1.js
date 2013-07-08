@@ -12,7 +12,7 @@ function Win1(){
 		textField = Ti.UI.createTextField({
 			borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 			width: 200,
-			top: 54
+			top: 60
 		}),
 		buttonInsert = Ti.UI.createButton({
 			title: 'Insert',
