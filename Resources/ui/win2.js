@@ -8,7 +8,7 @@ function Win2(){
 	});
 	win.add(table);
 	
-	git // *Eventos
+	// *Eventos
 	win.addEventListener('focus', function(e){
 		var databaseObj = new dataBase('query', null),
 		    data = []; 
