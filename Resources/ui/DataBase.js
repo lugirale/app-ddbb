@@ -1,28 +1,29 @@
 function DataBase(req, name){
     switch(req){
         case 'create': {
-            var db = Ti.Database.open('bbddname');
-            db.execute('CREATE TABLE IF NOT EXISTS data ( id INTEGER PRIMARY KEY, name TEXT);');
+        	var db = Ti.Database.install('/mydata/dataBase', 'dataBaseName');
+            // var db = Ti.Database.open('bbddname');
+            // db.execute('CREATE TABLE IF NOT EXISTS data ( id INTEGER PRIMARY KEY, name TEXT);');
             db.close();
             Ti.API.info('created!');
   	    }
   	    break;
         case 'insert': {
-            var db = Ti.Database.open('bbddname');
+            var db = Ti.Database.open('dataBaseName');
             db.execute('INSERT INTO DATA(name) VALUES ("'+name+'");');
             db.close();
             Ti.API.info('inserted!');
   	    }
   	    break;
         case 'delete': {
-            var db = Ti.Database.open('bbddname');
+            var db = Ti.Database.open('dataBaseName');
             db.execute('DELETE FROM data WHERE name=?', name);
             db.close();
             Ti.API.info('deleted!');
   	    }
   	    break;
         case 'query': {
-            var db = Ti.Database.open('bbddname'),
+            var db = Ti.Database.open('dataBaseName'),
             allData = db.execute('SELECT * FROM data'),
             data = [];
             while(allData.isValidRow()){
